@@ -18,19 +18,34 @@
 </div>
 <div class="container text-center">
     <ul class="nav nav-pills center-pills" style="display:inline-block">
-        <li class="active"><a href="#">Today</a></li>
-        <li><a href="slider.html">Forecast</a></li>
+        <li class="active"><a data-toggle="pill" href="#main">Today</a></li>
+        <li><a data-toggle="pill" href="#slider">Forecast</a></li>
     </ul>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-            <h1 id="date_string">It's __% through the semester!</h1>
-            <h2 id="meal_forecast">lololol</h2>
-            <p id="current_date"></p>
+<div class="tab-content">
+    <div id="main" class="tab-pane fade in active">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 text-center">
+                    <h1 id="date_string">It's __% through the semester!</h1>
+                    <h2 id="meal_forecast">lololol</h2>
+                    <p id="current_date"></p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div id="slider" class="tab-pane fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 text-center">
+                    <h1>Test</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 </body>
 </html>

@@ -12,6 +12,14 @@ var d = {
 
 var currentDate;
 
+function loadMain() {
+
+}
+
+function loadSlider() {
+
+}
+
 function onPageLoad() {
     $.get('dates.json', undefined, function(data) {
         d = data;
