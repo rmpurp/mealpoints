@@ -10,7 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="mainlogic.js"></script>
 </head>
-<body onload="onPageLoad()">
+<body onload="loadMainPage()">
 
 
 <div class="jumbotron text-center">
@@ -18,8 +18,8 @@
 </div>
 <div class="container text-center">
     <ul class="nav nav-pills center-pills" style="display:inline-block">
-        <li class="active"><a data-toggle="pill" href="#main">Today</a></li>
-        <li><a data-toggle="pill" href="#slider">Forecast</a></li>
+        <li class="active"><a data-toggle="pill" href="#main" onclick="loadMainPage()">Today</a></li>
+        <li><a data-toggle="pill" href="#slider" onclick="loadSliderPage()">Forecast</a></li>
     </ul>
 </div>
 <div class="tab-content">
@@ -27,9 +27,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <h1 id="date_string">It's __% through the semester!</h1>
-                    <h2 id="meal_forecast">lololol</h2>
-                    <p id="current_date"></p>
+                    <h1 class="date_string">It's __% through the semester!</h1>
+                    <h2 class="meal_forecast">lololol</h2>
+                    <p class="current_date"></p>
                 </div>
             </div>
         </div>
@@ -39,7 +39,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <h1>Test</h1>
+                    <h1 class="date_string">It's __% through the semester!</h1>
+                    <h2 class="meal_forecast">lololol</h2>
+                    <input type="range" id="datePicker" onchange="onSliderChange()">
+                    <p class="current_date"></p>
                 </div>
             </div>
         </div>
