@@ -20,30 +20,19 @@ function onPageLoad() {
                 d[key] = new Date(d[key]);
             }
         }
-        setUpSlider();
+        currentDate = new Date("10 12 2017"); //change to new Date() for production purposes
+        updateFraction(currentDate);
+        updateMealPlanForcast(currentDate);
+        $("#current_date").html(currentDate.toLocaleString());
     }, 'json');
+
 }
 
-function onSliderChange() {
-    currentDate = new Date(parseInt($("#datePicker").val()));
-    $("#current_date").html(currentDate.toLocaleString());
-    updateFraction(currentDate);
-    updateMealPlanForcast(currentDate);
-}
 
 function updateMealPlanForcast(date) {
     var numMealsLeft = 1500 - 1500 * fractionThroughTheYear(date);
     numMealsLeft = Math.round(10 * numMealsLeft) / 10;
     $("#meal_forecast").html("You should have " + numMealsLeft + " meal points left.");
-}
-
-function setUpSlider() {
-    $("#datePicker").attr({
-        "min": d.semesterStart.getTime(),
-        "max": d.semesterEnd.getTime(),
-        "value": d.semesterStart.getTime()
-    });
-    onSliderChange();
 }
 
 function fractionThroughTheYear(date) {
