@@ -10,7 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="mainlogic.js"></script>
 </head>
-<body onload="loadMainPage()">
+<body onload="loadWebPage()">
 
 
 <div class="jumbotron text-center">
@@ -18,37 +18,32 @@
 </div>
 <div class="container text-center">
     <ul class="nav nav-pills center-pills" style="display:inline-block">
-        <li class="active"><a data-toggle="pill" href="#main" onclick="loadMainPage()">Today</a></li>
-        <li><a data-toggle="pill" href="#slider" onclick="loadSliderPage()">Forecast</a></li>
+        <li class="active"><a data-toggle="pill" href="#" onclick="mainPillClicked()">Today</a></li>
+        <li><a data-toggle="pill" href="#" onclick="sliderPillClicked()">Forecast</a></li>
     </ul>
 </div>
-<div class="tab-content">
-    <div id="main" class="tab-pane fade in active">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <h1 class="date_string">It's __% through the semester!</h1>
-                    <h2 class="meal_forecast">lololol</h2>
-                    <p class="current_date"></p>
-                </div>
-            </div>
+
+<div class="container" id="main">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <h1 class="date_string">It's __% through the semester!</h1>
+            <h2 class="meal_forecast">lololol</h2>
+            <p class="current_date"></p>
         </div>
     </div>
-
-    <div id="slider" class="tab-pane fade">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <h1 class="date_string">It's __% through the semester!</h1>
-                    <h2 class="meal_forecast">lololol</h2>
-                    <input type="range" id="datePicker" onchange="onSliderChange()">
-                    <p class="current_date"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
+
+ <div class="container" id="slider">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <h1 class="date_string">It's __% through the semester!</h1>
+            <h2 class="meal_forecast">lololol</h2>
+            <input type="range" id="datePicker" onchange="onSliderChange()">
+            <p class="current_date"></p>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>

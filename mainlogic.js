@@ -12,27 +12,50 @@ var d = {
 
 var currentDate; //eventually remove this global
 
-function loadMainPage() {
+
+function mainPillClicked() {
+    $("#slider").fadeOut(400, "swing", function() {
+        loadMainPage(new function() {$("#main").fadeIn();});
+    });
+}
+
+function sliderPillClicked() {
+    $("#main").fadeOut(400, "swing", function() {
+        loadSliderPage(new function() {$("#slider").fadeIn();});
+    });
+}
+
+function loadWebPage() {
+    $("#slider").hide();
+    loadMainPage();
+}
+
+function loadMainPage(callBack) {
     var date = new Date("11 23 2017") //eventaully change to new Date()
     onPageLoad(function() {
         updateFraction(date, "It's ", "% through the semester!", "Happy Thanksgiving! ");
         updateMealPlanForcast(date);
         $(".current_date").html(date.toLocaleString());
+        if(callBack !== undefined)
+             callBack();
     });
 
 }
 
-function loadSliderPage() {
+function loadSliderPage(callBack) {
     var date = new Date("11 23 2017")
     onPageLoad(function() {
         setUpSlider(date);
+        if(callBack !== undefined) {
+            callBack();
+        }
     })
 }
 
 function onSliderChange() {
     var date = new Date(parseInt($("#datePicker").val()));
     $(".current_date").html(date.toLocaleString());
-    updateFraction(date, "This would be ", "% through the semester!", "This is Thanksgiving break! ");
+    updateFraction(date, "This would be ", "% through the semester!", "Give some thanks! ");
     updateMealPlanForcast(date);
 }
 
